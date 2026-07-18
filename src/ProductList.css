@@ -242,7 +242,7 @@ body {
     padding: 0;
   }
   .product-card {
-    flex: 1 1 calc(50% - 20px); /* Adjust width for 2 cards per row with 20px gap on small screens */
+    flex: 1 1 calc(50% - 20px); 
     max-width: calc(50% - 20px);
     padding-inline: 5px;
   }

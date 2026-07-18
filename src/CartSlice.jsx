@@ -7,10 +7,24 @@ export const CartSlice = createSlice({
   },
   reducers: {
     addItem: (state, action) => {
-      state.items.push({ ...action.payload, quantity: 1 });
+      const isAdded = state.items.find(
+        (item) => item.name === action.payload.name,
+      );
+      if (!isAdded) {
+        state.items.push({ ...action.payload, quantity: 1 });
+      }
     },
-    removeItem: (state, action) => {},
-    updateQuantity: (state, action) => {},
+    removeItem: (state, action) => {
+      const updatedArray = state.items.filter(
+        (item) => item.name !== action.payload.name,
+      );
+      state.items = updatedArray;
+    },
+    updateQuantity: (state, action) => {
+      const { product, delta } = action.payload;
+      const existItem = state.items.find((item) => item.name === product);
+      existItem.quantity += delta;
+    },
   },
 });
 

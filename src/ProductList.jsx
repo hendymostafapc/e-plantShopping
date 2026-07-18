@@ -269,7 +269,7 @@ function ProductList({ onHomeClick }) {
     display: "flex",
     justifyContent: "space-between",
     alignItems: "center",
-    width: "1100px",
+    width: "50%",
   };
   const styleA = {
     color: "white",
@@ -294,6 +294,7 @@ function ProductList({ onHomeClick }) {
 
   const handleContinueShopping = (e) => {
     e.preventDefault();
+    console.log("تم الضغط علي continue shopping");
     setShowCart(false);
   };
   return (
